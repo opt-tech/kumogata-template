@@ -44,7 +44,7 @@ iops =
     ""
   end
 kms = _ref_attr_string("kms", "Arn", args)
-license = _valid_values(args[:license], %w( license-included bring-your-own-license general-public-license ), "general-public-license")
+license = _valid_values(args[:license], %w( license-included bring-your-own-license general-public-license ))
 user_name = _ref_string("user_name", args, "db master user name")
 user_password = _ref_string("user_password", args, "db master user password")
 multi_az = _bool("multi_az", args, false)
