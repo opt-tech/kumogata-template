@@ -200,7 +200,7 @@ def _base64(data)
 end
 
 def _base64_shell(data, shell = "/bin/bash")
-  _base64("#!#{shell}\n#{data}")
+  _base64("#!#{shell}\n#{data}\n")
 end
 
 def _find_in_map(name, top_level, secondary_level)
