@@ -64,8 +64,8 @@ depends = _resource_name(args[:master_instance], "db instance") unless _empty? s
 
 allocated = "" unless _empty? cluster
 character = "" if engine =~ /aurora/
-parameter =
-  if _empty? parameter
+if _empty? parameter
+  parameter =
     if engine == "mysql" and engine_version =~ /5.7/
       "default.mysql5.7"
     elsif engine == "aurora" and engine_version =~ /5.6/
@@ -77,9 +77,7 @@ parameter =
     else
       nil
     end
-  else
-    nil
-  end
+end
 instance_id = instance_id.downcase if instance_id.is_a? String
 if engine !~ /sqlserver/
   domain = ""
