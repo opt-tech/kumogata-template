@@ -62,7 +62,8 @@ end
 def _real_name(name, args)
   key = _ref_key?(name, args) ? name : "name"
   real_name = _ref_string(key, args)
-  ((real_name.is_a? String) ? real_name.gsub(" ", "-") : real_name) =~ /^false/i ? false : real_name
+  real_name = real_name.gsub(" ", "-") if real_name.is_a? String
+  real_name =~ /^false/i ? false : real_name
 end
 
 def _ref_key?(name, args, ref_name = '')
