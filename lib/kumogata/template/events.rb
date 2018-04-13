@@ -6,7 +6,7 @@ require 'kumogata/template/helper'
 def _events_pattern(args)
   pattern = args[:pattern] || ""
   return "" if pattern.empty?
-
+  pattern
 end
 
 def _events_targets(args)
