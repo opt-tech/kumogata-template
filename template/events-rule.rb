@@ -18,7 +18,7 @@ _(name) do
   Type "AWS::Events::Rule"
   Properties do
     Description description unless description.empty?
-    EventPattern pattern unless schedule.empty?
+    EventPattern pattern unless pattern.empty?
     Name event_name
     RoleArn role unless role.empty?
     ScheduleExpression schedule unless schedule.empty?
