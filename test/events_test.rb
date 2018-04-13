@@ -19,4 +19,30 @@ Test _events_targets({ targets: [ { arn: "test", id: "test" } ] })
     EOS
     assert_equal exp_template.chomp, act_template
   end
+
+  def test_events_pattern
+    template = <<-EOS
+Test _events_pattern({ pattern: { "source": [ "aws.ec2" ], "detail-type": [ "EC2 Instance State-change Notification" ], "detail": { "state": [ "running" ] } } } )
+    EOS
+    act_template = run_client_as_json(template)
+    exp_template = <<-EOS
+{
+  "Test": {
+    "source": [
+      "aws.ec2"
+    ],
+    "detail-type": [
+      "EC2 Instance State-change Notification"
+    ],
+    "detail": {
+      "state": [
+        "running"
+      ]
+    }
+  }
+}
+    EOS
+    assert_equal exp_template.chomp, act_template
+  end
+
 end
