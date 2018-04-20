@@ -63,7 +63,7 @@ _events_rule "test", pattern: ""
     assert_equal exp_template.chomp, act_template
   end
 
-  def test_normal_with_empty_pattern
+  def test_normal_with_dynamodb_pattern
     template = <<-EOS
 _events_rule "test", pattern: {
   "source": [
