@@ -13,10 +13,10 @@ if replication
              export: _export_string(args, "cache replication group")
 
     _output "#{args[:name]} cache replication group configuration address",
-            ref_value: [ "#{args[:name]} cache replication group", "ConfigurationEndPoint.Address" ],
+            ref_value: [ "#{args[:name]} cache replication group", "RedisEndpoint.Address" ],
             export: _export_string(args, "cache replication group configuration end point address")
     _output "#{args[:name]} cache replication group configuration port",
-            ref_value: [ "#{args[:name]} cache replication group", "ConfigurationEndPoint.Port" ],
+            ref_value: [ "#{args[:name]} cache replication group", "RedisEndpoint.Port" ],
             export: _export_string(args, "cache replication group configuration end point port")
 
     _output "#{args[:name]} cache replication group primary address",
