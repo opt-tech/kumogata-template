@@ -12,13 +12,6 @@ if replication
              ref_value: "#{args[:name]} cache replication group",
              export: _export_string(args, "cache replication group")
 
-    _output "#{args[:name]} cache replication group configuration address",
-            ref_value: [ "#{args[:name]} cache replication group", "ConfigurationEndPoint.Address" ],
-            export: _export_string(args, "cache replication group configuration end point address")
-    _output "#{args[:name]} cache replication group configuration port",
-            ref_value: [ "#{args[:name]} cache replication group", "ConfigurationEndPoint.Port" ],
-            export: _export_string(args, "cache replication group configuration end point port")
-
     _output "#{args[:name]} cache replication group primary address",
             ref_value: [ "#{args[:name]} cache replication group", "PrimaryEndPoint.Address" ],
             export: _export_string(args, "cache replication group primary end point address")
@@ -42,5 +35,12 @@ else
     _output "#{args[:name]} cache cluster port",
             ref_value: [ "#{args[:name]} cache cluster", "ConfigurationEndpoint.Port" ],
             export: _export_string(args, "cache replication group configuration endpoint port")
+  elsif engine == "redis"
+    _output "#{args[:name]} cache replication group configuration address",
+            ref_value: [ "#{args[:name]} cache replication group", "RedisEndpoint.Address" ],
+            export: _export_string(args, "cache replication group configuration end point address")
+    _output "#{args[:name]} cache replication group configuration port",
+            ref_value: [ "#{args[:name]} cache replication group", "RedisEndpoint.Port" ],
+            export: _export_string(args, "cache replication group configuration end point port")
   end
 end
