@@ -61,6 +61,7 @@ storage_type = _valid_values(args[:storage_type], %w( standard gp2 io1 ), "gp2")
 tags = _tags(args)
 timezone = _ref_string_default("timezone", args, "db timezone")
 security_groups = _ref_array("security_groups", args, "security group")
+deletion_policy = _valid_values(args[:deletion_policy], %w( Delete Retain Snapshot ))
 ## TODO use helper
 depends = _resource_name(args[:master_instance], "db instance") unless _empty? source_db
 
@@ -169,5 +170,6 @@ _(name) do
     Timezone timezone unless _empty? timezone
     VPCSecurityGroups security_groups unless _empty? security_groups
   end
+  DeletionPolicy deletion_policy unless _empty? deletion_policy
   DependsOn depends unless _empty? depends
 end
