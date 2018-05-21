@@ -41,9 +41,9 @@ else
   elsif engine == "redis"
     _output "#{args[:name]} cache cluster redis address",
             ref_value: [ "#{args[:name]} cache cluster", "RedisEndpoint.Address" ],
-            export: _export_string(args, "cache cluster redis end point address")
+            export: _export_string(args, "cache cluster redis endpoint address")
     _output "#{args[:name]} cache cluster redis port",
             ref_value: [ "#{args[:name]} cache cluster", "RedisEndpoint.Port" ],
-            export: _export_string(args, "cache cluster redis end point port")
+            export: _export_string(args, "cache cluster redis endpoint port")
   end
 end
