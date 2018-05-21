@@ -27,20 +27,23 @@ if replication
              export: _export_string(args, "cache replication group read end point ports")
   end
 else
-  _output "#{args[:name]} cache cluster", ref_value: "#{args[:name]} cache cluster"
+  _output "#{args[:name]} cache cluster",
+          ref_value: "#{args[:name]} cache cluster",
+          export: _export_string(args, "cache cluster")
+
   if engine == "memcached"
-    _output "#{args[:name]} cache cluster address",
+    _output "#{args[:name]} cache cluster configuration address",
             ref_value: [ "#{args[:name]} cache cluster", "ConfigurationEndpoint.Address" ],
-            export: _export_string(args, "cache replication group configuration endpoint address")
-    _output "#{args[:name]} cache cluster port",
+            export: _export_string(args, "cache cluster configuration endpoint address")
+    _output "#{args[:name]} cache cluster configuration port",
             ref_value: [ "#{args[:name]} cache cluster", "ConfigurationEndpoint.Port" ],
-            export: _export_string(args, "cache replication group configuration endpoint port")
+            export: _export_string(args, "cache cluster configuration endpoint port")
   elsif engine == "redis"
-    _output "#{args[:name]} cache replication group configuration address",
-            ref_value: [ "#{args[:name]} cache replication group", "RedisEndpoint.Address" ],
-            export: _export_string(args, "cache replication group configuration end point address")
-    _output "#{args[:name]} cache replication group configuration port",
-            ref_value: [ "#{args[:name]} cache replication group", "RedisEndpoint.Port" ],
-            export: _export_string(args, "cache replication group configuration end point port")
+    _output "#{args[:name]} cache cluster redis address",
+            ref_value: [ "#{args[:name]} cache cluster", "RedisEndpoint.Address" ],
+            export: _export_string(args, "cache cluster redis end point address")
+    _output "#{args[:name]} cache cluster redis port",
+            ref_value: [ "#{args[:name]} cache cluster", "RedisEndpoint.Port" ],
+            export: _export_string(args, "cache cluster redis end point port")
   end
 end
