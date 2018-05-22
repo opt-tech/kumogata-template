@@ -282,7 +282,8 @@ _rds_db_instance 'test',
                  instance_class: 'db.t2.micro',
                  engine: 'mysql',
                  engine_version: '5.7.17',
-                 ref_security_groups: %w( test )
+                 ref_security_groups: %w( test ),
+                 deletion_policy: 'Delete'
 EOS
     act_template = run_client_as_json(template)
     exp_template = <<-EOS
@@ -353,6 +354,7 @@ EOS
         }
       ]
     },
+    "DeletionPolicy": "Delete",
     "DependsOn": "MasterDbInstance"
   }
 }
