@@ -67,6 +67,8 @@ EC2_INSTANCE_TYPES =
    # m4.16xlarge 64    256       EBS Only  20Gps     10,000
    "m4.large", "m4.xlarge", "m4.2xlarge", "m4.4xlarge", "m4.10xlarge", "m4.16xlarge",
 
+   "m5.large", "m5.xlarge", "m5.2xlarge", "m5.4xlarge", "m5.12xlarge", "m5.24xlarge",
+
    # Model      vCPU   Mem(GiB)  Storage   EBS(Mbps)
    # c4.large     2   3.75       EBS-Only    500
    # c4.xlarge    4    7.5       EBS-Only    750
@@ -75,6 +77,8 @@ EC2_INSTANCE_TYPES =
    # c4.8xlarge  36     60       EBS-Only  4,000
    "c4.large", "c4.xlarge", "c4.2xlarge", "c4.4xlarge", "c4.8xlarge",
 
+   "c5.large", "c5.xlarge", "c5.2xlarge", "c5.4xlarge", "c5.9xlarge", "c5.18xlarge",
+
    # Model      vCPU   Mem(GiB)  SSD Storage(GB)
    # r3.large     2     15.25      1 x 32
    # r3.xlarge    4     30.5       1 x 80
@@ -82,6 +86,8 @@ EC2_INSTANCE_TYPES =
    # r3.4xlarge  16    122         1 x 320
    # r3.8xlarge  32    244         2 x 320
    "r3.large", "r3.xlarge", "r3.2xlarge", "r3.4xlarge", "r3.8xlarge",
+
+   "r4.large", "r4.xlarge", "r4.2xlarge", "r4.4xlarge", "r4.8xlarge", "r4.16xlarge",
 
    # Model      vCPU   Mem(GiB) SSD Storage(GB)
    # i2.xlarge    4     30.5    1 x 800
