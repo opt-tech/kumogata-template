@@ -12,7 +12,7 @@ description = args[:description] || ""
 environment = _lambda_function_environment(args)
 function_name = args[:function_name] || ""
 runtime = _valid_values(args[:runtime],
-                        %w( nodejs nodejs8.10 java8 python2.7 ), "nodejs")
+                        %w( nodejs6.10 nodejs8.10 java8 python2.7 ), "nodejs6.10")
 handler =
   if args.key? :handler
     args[:handler]
