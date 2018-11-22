@@ -66,21 +66,15 @@ end
 
 def _s3_lifecycle(args)
   rules = args[:lifecycle] || []
-  expiration_values = %w( ExpirationDate
-                          NoncurrentVersionExpirationInDays
-                          NoncurrentVersionTransition NoncurrentVersionTransitions
-                          Transition Transitions )
   status_values = %w( Enabled Disabled )
 
   array = []
   rules.each do |rule|
-    expiration_date = _valid_values(rule[:expiration_date],
-                                    expiration_values, "ExpirationInDays")
     noncurrent_transitions = _s3_lifecycle_noncurrent_version_transition(rule)
     status = _valid_values(rule[:status], status_values, "Enabled")
     transitions = _s3_lifecycle_transition(rule)
     array << _{
-      ExpirationDate expiration_date if rule.key? :expiration_date
+      ExpirationDate rule[:expiration_date] if rule.key? :expiration_date
       ExpirationInDays rule[:expiration_in_days] if rule.key? :expiration_in_days
       Id rule[:id] if rule.key? :id
       NoncurrentVersionExpirationInDays rule[:non_expiration_in_days] if rule.key? :non_expiration_in_days
