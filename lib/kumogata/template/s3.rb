@@ -77,7 +77,7 @@ def _s3_lifecycle(args)
       ExpirationDate rule[:expiration_date] if rule.key? :expiration_date
       ExpirationInDays rule[:expiration_in_days] if rule.key? :expiration_in_days
       Id rule[:id] if rule.key? :id
-      NoncurrentVersionExpirationInDays rule[:non_expiration_in_days] if rule.key? :non_expiration_in_days
+      NoncurrentVersionExpirationInDays rule[:noncurrent_version_expiration_in_days] if rule.key? :noncurrent_version_expiration_in_days
       NoncurrentVersionTransitions noncurrent_transitions unless noncurrent_transitions.empty?
       Prefix rule[:prefix] if rule.key? :prefix
       Status status
@@ -98,7 +98,7 @@ def _s3_lifecycle_noncurrent_version_transition(args)
   transitions.each do |transition|
     array << _{
       StorageClass transition[:storage]
-      TransitionInDays transition[:transition]
+      TransitionInDays transition[:in_days]
     }
   end
   array
