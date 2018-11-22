@@ -36,7 +36,7 @@ Test _s3_cors(cors: [ { headers: "test", methods: "test", origins: "test", expos
 
   def test_s3_lifecycle
     template = <<-EOS
-Test _s3_lifecycle(lifecycle: [ { expiration_date: "ExpirationDate", expiration_in_days: "test", id: "test", noncurrent_version_transitions: [ { storage: "test", transition: "test" } ], non_expiration_in_days: "test" } ])
+Test _s3_lifecycle(lifecycle: [ { abort_incomplete_multipart_upload: { days: 7 }, expiration_date: "2018-01-01", expiration_in_days: 30, id: "test", noncurrent_version_expiration_in_days: 90, noncurrent_version_transitions: [ { storage: "test", in_days: "60" } ], transitions: [ { storage: "test", date: "2018-01-01" } ] } ])
     EOS
     act_template = run_client_as_json(template)
     exp_template = <<-EOS
@@ -44,17 +44,26 @@ Test _s3_lifecycle(lifecycle: [ { expiration_date: "ExpirationDate", expiration_
   "Test": {
     "Rules": [
       {
-        "ExpirationDate": "ExpirationDate",
-        "ExpirationInDays": "test",
+        "AbortIncompleteMultipartUpload": {
+          "DaysAfterInitiation": "7"
+        },
+        "ExpirationDate": "2018-01-01",
+        "ExpirationInDays": "30",
         "Id": "test",
-        "NoncurrentVersionExpirationInDays": "test",
+        "NoncurrentVersionExpirationInDays": "90",
         "NoncurrentVersionTransitions": [
           {
             "StorageClass": "test",
-            "TransitionInDays": "test"
+            "TransitionInDays": "60"
           }
         ],
-        "Status": "Enabled"
+        "Status": "Enabled",
+        "Transitions": [
+          {
+            "StorageClass": "test",
+            "TransitionDate": "2018-01-01"
+          }
+        ]
       }
     ]
   }
