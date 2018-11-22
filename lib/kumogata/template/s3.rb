@@ -70,10 +70,12 @@ def _s3_lifecycle(args)
 
   array = []
   rules.each do |rule|
+    abort_incomplete_multipart_upload = _s3_lifecycle_abort_incomplete_multipart_upload(rule)
     noncurrent_transitions = _s3_lifecycle_noncurrent_version_transition(rule)
     status = _valid_values(rule[:status], status_values, "Enabled")
     transitions = _s3_lifecycle_transition(rule)
     array << _{
+      AbortIncompleteMultipartUpload abort_incomplete_multipart_upload if abort_incomplete_multipart_upload
       ExpirationDate rule[:expiration_date] if rule.key? :expiration_date
       ExpirationInDays rule[:expiration_in_days] if rule.key? :expiration_in_days
       Id rule[:id] if rule.key? :id
@@ -89,6 +91,16 @@ def _s3_lifecycle(args)
   _{
     Rules array
   }
+end
+
+def _s3_lifecycle_abort_incomplete_multipart_upload(args)
+  rule = args[:abort_incomplete_multipart_upload]
+
+  if rule
+    _{
+      DaysAfterInitiation rule[:days]
+    }
+  end
 end
 
 def _s3_lifecycle_noncurrent_version_transition(args)
