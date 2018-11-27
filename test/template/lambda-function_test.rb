@@ -24,7 +24,7 @@ _lambda_function "test", code: { s3_bucket: "test", s3_key: "test" }, function_n
           "Arn"
         ]
       },
-      "Runtime": "nodejs",
+      "Runtime": "nodejs6.10",
       "Timeout": "3",
       "Tags": [
         {
