@@ -6,6 +6,9 @@ require 'kumogata/template/helper'
 _output "#{args[:name]} subnet",
         ref_value: "#{args[:name]} subnet",
         export: _export_string(args, "subnet")
+_output "#{args[:name]} subnet physical id",
+        ref_value: "#{args[:name]} subnet",
+        export: _export_string(args, "subnet")
 _output "#{args[:name]} subnet az",
         ref_value: [ "#{args[:name]} subnet", "AvailabilityZone" ],
         export: _export_string(args, "subnet az")
