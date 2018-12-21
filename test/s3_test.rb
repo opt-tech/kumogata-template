@@ -90,9 +90,9 @@ Test _s3_logging({ logging: { destination: "test", prefix: "test" } })
 
   def test_s3_notification
     template = <<-EOS
-Test _s3_notification(notification: { lambda: [ { event: "test", filter: "test", function: "test" }],
-                                      queue: [ { event: "test", filter: "test", queue: "test" }],
-                                      topic: [ { event: "test", filter: "test", topic: "test" }], })
+Test _s3_notification(notification: { lambda: [ { event: "test", filters: [ { name: "test"} ], function: "test" }],
+                                      queue: [ { event: "test", filters: [ { name: "test"} ], queue: "test" }],
+                                      topic: [ { event: "test", filters: [ { name: "test"} ], topic: "test" }], })
     EOS
     act_template = run_client_as_json(template)
     exp_template = <<-EOS
@@ -102,7 +102,14 @@ Test _s3_notification(notification: { lambda: [ { event: "test", filter: "test",
       {
         "Event": "test",
         "Filter": {
-          "S3Key": "test"
+          "S3Key": {
+            "Rules": [
+              {
+                "Name": "name",
+                "Value": "test"
+              }
+            ]
+          }
         },
         "Function": "test"
       }
@@ -111,7 +118,14 @@ Test _s3_notification(notification: { lambda: [ { event: "test", filter: "test",
       {
         "Event": "test",
         "Filter": {
-          "S3Key": "test"
+          "S3Key": {
+            "Rules": [
+              {
+                "Name": "name",
+                "Value": "test"
+              }
+            ]
+          }
         },
         "Queue": "test"
       }
@@ -120,7 +134,14 @@ Test _s3_notification(notification: { lambda: [ { event: "test", filter: "test",
       {
         "Event": "test",
         "Filter": {
-          "S3Key": "test"
+          "S3Key": {
+            "Rules": [
+              {
+                "Name": "name",
+                "Value": "test"
+              }
+            ]
+          }
         },
         "Topic": "test"
       }
