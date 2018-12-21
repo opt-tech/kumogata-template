@@ -63,7 +63,7 @@ _s3_bucket "test"
 
   def test_aws_website
     template = <<-EOS
-_s3_bucket "test", bucket: "PublicBucket", website: { error: "error.html", index: "index.html", routing: [ routing: { http: "404", key_prefix: "out1/" }, redirect: { host: "ec2-11-22-333-44.compute-1.amazonaws.com", replace_key_prefix: "report-404/" } ] }
+_s3_bucket "test", bucket: "PublicBucket", notification: { lambda: [ { event: 's3:ObjectCreated:Put', filters: [ prefix: 'prod' ], function: "arn:aws:lambda:function:test" } ] }, website: { error: "error.html", index: "index.html", routing: [ routing: { http: "404", key_prefix: "out1/" }, redirect: { host: "ec2-11-22-333-44.compute-1.amazonaws.com", replace_key_prefix: "report-404/" } ] }
     EOS
     act_template = run_client_as_json(template)
     exp_template = <<-EOS
@@ -73,6 +73,24 @@ _s3_bucket "test", bucket: "PublicBucket", website: { error: "error.html", index
     "Properties": {
       "AccessControl": "PublicRead",
       "BucketName": "PublicBucket",
+      "NotificationConfiguration": {
+        "LambdaConfigurations": [
+          {
+            "Event": "s3:ObjectCreated:Put",
+            "Filter": {
+              "S3Key": {
+                "Rules": [
+                  {
+                    "Name": "prefix",
+                    "Value": "prod"
+                  }
+                ]
+              }
+            },
+            "Function": "arn:aws:lambda:function:test"
+          }
+        ]
+      },
       "Tags": [
         {
           "Key": "Name",

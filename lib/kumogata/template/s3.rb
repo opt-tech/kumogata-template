@@ -161,7 +161,20 @@ def _s3_notification_configuration(args, key)
   values.each do |value|
     array << _{
       Event value[:event]
-      Filter _{ S3Key value[:filter] } if value.key? :filter
+      Filter _{
+        S3Key _{
+          Rules value[:filters].collect{|v|
+            filter = []
+            v.each_pair do |kk, vv|
+              filter << _{
+                Name kk
+                Value vv
+              }
+            end
+            filter
+          }.flatten
+        }
+      } if value.key? :filters
       case key
       when :lambda
         Function value[:function]
