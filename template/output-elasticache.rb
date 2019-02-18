@@ -11,7 +11,9 @@ if replication
     _output "#{args[:name]} cache replication group",
              ref_value: "#{args[:name]} cache replication group",
              export: _export_string(args, "cache replication group")
-
+    _output "#{args[:name]} cache replication group physical id",
+            ref_value: "#{args[:name]} cache replication group",
+            export: _export_string(args, "cache replication group")
     _output "#{args[:name]} cache replication group primary address",
             ref_value: [ "#{args[:name]} cache replication group", "PrimaryEndPoint.Address" ],
             export: _export_string(args, "cache replication group primary end point address")

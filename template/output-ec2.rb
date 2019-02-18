@@ -8,6 +8,9 @@ public_ip = args[:public_ip] || false
 _output "#{args[:name]} instance",
         ref_value: "#{args[:name]} instance",
         export: _export_string(args, "instance")
+_output "#{args[:name]} instance physical id",
+        ref_value: "#{args[:name]} instance",
+        export: _export_string(args, "instance")
 _output "#{args[:name]} instance az",
         ref_value: [ "#{args[:name]} instance", "AvailabilityZone" ],
         export: _export_string(args, "instance az")
