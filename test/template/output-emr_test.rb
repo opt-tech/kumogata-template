@@ -14,6 +14,12 @@ _output_emr "test"
       "Ref": "TestEmrCluster"
     }
   },
+  "TestEmrClusterPhysicalId": {
+    "Description": "description of TestEmrClusterPhysicalId",
+    "Value": {
+      "Ref": "TestEmrCluster"
+    }
+  },
   "TestEmrClusterMasterPublicDns": {
     "Description": "description of TestEmrClusterMasterPublicDns",
     "Value": {

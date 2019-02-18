@@ -13,6 +13,12 @@ _output_security_group "test"
     "Value": {
       "Ref": "TestSecurityGroup"
     }
+  },
+  "TestSecurityGroupPhysicalId\": {
+    "Description": "description of TestSecurityGroupPhysicalId",
+    "Value": {
+      "Ref": "TestSecurityGroup"
+    }
   }
 }
     EOS

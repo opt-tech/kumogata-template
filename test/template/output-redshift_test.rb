@@ -14,6 +14,12 @@ _output_redshift "test"
       "Ref": "TestRedshiftCluster"
     }
   },
+  "TestRedshiftClusterPhysicalId": {
+    "Description": "description of TestRedshiftClusterPhysicalId",
+    "Value": {
+      "Ref": "TestRedshiftCluster"
+    }
+  },
   "TestRedshiftClusterAddress": {
     "Description": "description of TestRedshiftClusterAddress",
     "Value": {

@@ -14,6 +14,12 @@ _output_ec2 "test"
       "Ref": "TestInstance"
     }
   },
+  "TestInstancePhysicalId": {
+    "Description": "description of TestInstancePhysicalId",
+    "Value": {
+      "Ref": "TestInstance"
+    }
+  },
   "TestInstanceAz": {
     "Description": "description of TestInstanceAz",
     "Value": {
@@ -44,6 +50,12 @@ _output_ec2 "test", public_ip: true
 {
   "TestInstance": {
     "Description": "description of TestInstance",
+    "Value": {
+      "Ref": "TestInstance"
+    }
+  },
+  "TestInstancePhysicalId": {
+    "Description": "description of TestInstancePhysicalId",
     "Value": {
       "Ref": "TestInstance"
     }

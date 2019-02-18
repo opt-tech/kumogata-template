@@ -14,6 +14,12 @@ _output_elb "test"
       "Ref": "TestLoadBalancer"
     }
   },
+  "TestLoadBalancerPhysicalId": {
+    "Description": "description of TestLoadBalancerPhysicalId",
+    "Value": {
+      "Ref": "TestLoadBalancer"
+    }
+  },
   "TestLoadBalancerDnsName": {
     "Description": "description of TestLoadBalancerDnsName",
     "Value": {
@@ -53,6 +59,12 @@ _output_elb "test", route53: true
 {
   "TestLoadBalancer": {
     "Description": "description of TestLoadBalancer",
+    "Value": {
+      "Ref": "TestLoadBalancer"
+    }
+  },
+  "TestLoadBalancerPhysicalId": {
+    "Description": "description of TestLoadBalancerPhysicalId",
     "Value": {
       "Ref": "TestLoadBalancer"
     }

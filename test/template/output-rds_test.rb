@@ -14,6 +14,12 @@ _output_rds "test"
       "Ref": "TestDbInstance"
     }
   },
+  "TestDbInstancePhysicalId": {
+    "Description": "description of TestDbInstancePhysicalId",
+    "Value": {
+      "Ref": "TestDbInstance"
+    }
+  },
   "TestDbInstanceAddress": {
     "Description": "description of TestDbInstanceAddress",
     "Value": {

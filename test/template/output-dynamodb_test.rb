@@ -13,6 +13,12 @@ _output_dynamodb "test"
     "Value": {
       "Ref": "TestTable"
     }
+  },
+  "TestTablePhysicalId": {
+    "Description": "description of TestTablePhysicalId",
+    "Value": {
+      "Ref": "TestTable"
+    }
   }
 }
     EOS

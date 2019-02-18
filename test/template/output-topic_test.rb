@@ -14,6 +14,12 @@ _output_topic "test"
       "Ref": "TestTopic"
     }
   },
+  "TestTopicPhysicalId": {
+    "Description": "description of TestTopicPhysicalId",
+    "Value": {
+      "Ref": "TestTopic"
+    }
+  },
   "TestTopicName": {
     "Description": "description of TestTopicName",
     "Value": {

@@ -14,6 +14,12 @@ _output_vpc "test"
       "Ref": "TestVpc"
     }
   },
+  "TestVpcPhysicalId": {
+    "Description": "description of TestVpcPhysicalId",
+    "Value": {
+      "Ref": "TestVpc"
+    }
+  },
   "TestVpcCidrBlock": {
     "Description": "description of TestVpcCidrBlock",
     "Value": {

@@ -14,6 +14,12 @@ _output_network_interface "test"
       "Ref": "TestNetworkInterface"
     }
   },
+  "TestNetworkInterfacePhysicalId": {
+    "Description": "description of TestNetworkInterfacePhysicalId",
+    "Value": {
+      "Ref": "TestNetworkInterface"
+    }
+  },
   "TestNetworkInterfacePrivateIp": {
     "Description": "description of TestNetworkInterfacePrivateIp",
     "Value": {
