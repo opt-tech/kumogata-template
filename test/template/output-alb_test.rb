@@ -14,6 +14,12 @@ _output_alb "test"
       "Ref": "TestLoadBalancer"
     }
   },
+  "TestLoadBalancerPhysicalId": {
+    "Description": "description of TestLoadBalancerPhysicalId",
+    "Value": {
+      "Ref": "TestLoadBalancer"
+    }
+  },
   "TestLoadBalancerDnsName": {
     "Description": "description of TestLoadBalancerDnsName",
     "Value": {
@@ -53,6 +59,12 @@ _output_alb "test", security_groups: 1
 {
   "TestLoadBalancer": {
     "Description": "description of TestLoadBalancer",
+    "Value": {
+      "Ref": "TestLoadBalancer"
+    }
+  },
+  "TestLoadBalancerPhysicalId": {
+    "Description": "description of TestLoadBalancerPhysicalId",
     "Value": {
       "Ref": "TestLoadBalancer"
     }

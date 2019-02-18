@@ -14,6 +14,12 @@ _output_instance_profile "test"
       "Ref": "TestInstanceProfile"
     }
   },
+  "TestInstanceProfilePhysicalId": {
+    "Description": "description of TestInstanceProfilePhysicalId",
+    "Value": {
+      "Ref": "TestInstanceProfile"
+    }
+  },
   "TestInstanceProfileArn": {
     "Description": "description of TestInstanceProfileArn",
     "Value": {

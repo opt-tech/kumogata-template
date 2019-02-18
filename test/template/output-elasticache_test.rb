@@ -48,6 +48,12 @@ _output_elasticache "test", replication: true, engine: "redis"
       "Ref": "TestCacheReplicationGroup"
     }
   },
+  "TestCacheReplicationGroupPhysicalId": {
+    "Description": "description of TestCacheReplicationGroupPhysicalId",
+    "Value": {
+      "Ref": "TestCacheReplicationGroup"
+    }
+  },
   "TestCacheReplicationGroupPrimaryAddress": {
     "Description": "description of TestCacheReplicationGroupPrimaryAddress",
     "Value": {

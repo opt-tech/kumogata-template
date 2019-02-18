@@ -13,6 +13,12 @@ _output_sqs "test"
     "Value": {
       "Ref": "TestQueue"
     }
+  },
+  "TestQueuePhysicalId": {
+    "Description": "description of TestQueuePhysicalId",
+    "Value": {
+      "Ref": "TestQueue"
+    }
   }
 }
     EOS

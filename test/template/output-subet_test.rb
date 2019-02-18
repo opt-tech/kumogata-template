@@ -14,6 +14,12 @@ _output_subnet "test"
       "Ref": "TestSubnet"
     }
   },
+  "TestSubnetPhysicalId": {
+    "Description": "description of TestSubnetPhysicalId",
+    "Value": {
+      "Ref": "TestSubnet"
+    }
+  },
   "TestSubnetAz": {
     "Description": "description of TestSubnetAz",
     "Value": {
