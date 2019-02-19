@@ -124,7 +124,7 @@ def _iam_policy_document(name, args)
 
     actions = action.collect{|vv| "#{service}:#{vv}" }
     if v.key? :resource
-      resource = _iam_arn(service, v[:resource])
+      resource = _iam_arn((service == 'sts' ? 'iam' : service), v[:resource])
     else
       resource = [ "*" ]
     end
@@ -255,6 +255,8 @@ def _iam_arn(service, resource)
         "#{arn_prefix}::#{v[:account_id]}:role/#{v[:role]}"
       elsif v.key? :root
         "#{arn_prefix}::#{v[:account_id]}:root"
+      elsif v.key? :user
+        "#{arn_prefix}::#{v[:account_id]}:user/#{v[:user]}"
       else
         "#{arn_prefix}::#{v[:account_id]}:#{v[:type]}/#{v[:user]}"
       end

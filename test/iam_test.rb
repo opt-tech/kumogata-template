@@ -237,6 +237,25 @@ PolicyDocument _iam_policy_document "test", test: [ { service: "s3", sid: "test"
 }
     EOS
     assert_equal exp_template.chomp, act_template
+
+    template = <<-EOS
+PolicyDocument _iam_policy_document "test", test: [ { service: "sts", resource: { role: "test" } } ]
+    EOS
+    act_template = run_client_as_json(template)
+    exp_template = <<-EOS
+{
+  "PolicyDocument": [
+    {
+      "Effect": "Allow",
+      "Action": [
+        "sts:*"
+      ],
+      "Resource": "arn:aws:iam:::role/test"
+    }
+  ]
+}
+    EOS
+    assert_equal exp_template.chomp, act_template
   end
 
   def test_iam_assume_role_policy_document
@@ -378,6 +397,20 @@ arn _iam_arn("s3", [ test1, test2 ])
   ]
 }
   EOS
+    assert_equal exp_template.chomp, act_template
+
+    template = <<-EOS
+arn _iam_arn("iam", [ { account_id: 1, user: "test1" }, { account_id: 2, user: "test2" } ])
+    EOS
+    act_template = run_client_as_json(template)
+    exp_template = <<-EOS
+{
+  "arn": [
+    "arn:aws:iam::1:user/test1",
+    "arn:aws:iam::2:user/test2"
+  ]
+}
+    EOS
     assert_equal exp_template.chomp, act_template
   end
 
