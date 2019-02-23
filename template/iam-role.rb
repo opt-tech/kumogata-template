@@ -16,6 +16,7 @@ managed_policies =
 path = args[:path] || "/"
 policies = _iam_policies("policies", args)
 role_name = _real_name("role", args)
+depends = args[:depends].map{|arg| _resource_name(arg)} if args.key? :depends
 
 _(name) do
   Type "AWS::IAM::Role"
@@ -29,4 +30,5 @@ _(name) do
     Policies policies unless policies.empty?
     RoleName role_name if role_name
   end
+  DependsOn depends unless _empty? depends
 end
