@@ -8,12 +8,6 @@ _output_topic "test"
     act_template = run_client_as_json(template)
     exp_template = <<-EOS
 {
-  "TestTopic": {
-    "Description": "description of TestTopic",
-    "Value": {
-      "Ref": "TestTopic"
-    }
-  },
   "TestTopicPhysicalId": {
     "Description": "description of TestTopicPhysicalId",
     "Value": {

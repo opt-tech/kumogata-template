@@ -8,12 +8,6 @@ _output_subnet "test"
     act_template = run_client_as_json(template)
     exp_template = <<-EOS
 {
-  "TestSubnet": {
-    "Description": "description of TestSubnet",
-    "Value": {
-      "Ref": "TestSubnet"
-    }
-  },
   "TestSubnetPhysicalId": {
     "Description": "description of TestSubnetPhysicalId",
     "Value": {

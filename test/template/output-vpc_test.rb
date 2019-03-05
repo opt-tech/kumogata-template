@@ -8,12 +8,6 @@ _output_vpc "test"
     act_template = run_client_as_json(template)
     exp_template = <<-EOS
 {
-  "TestVpc": {
-    "Description": "description of TestVpc",
-    "Value": {
-      "Ref": "TestVpc"
-    }
-  },
   "TestVpcPhysicalId": {
     "Description": "description of TestVpcPhysicalId",
     "Value": {

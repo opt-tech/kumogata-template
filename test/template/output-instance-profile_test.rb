@@ -8,12 +8,6 @@ _output_instance_profile "test"
     act_template = run_client_as_json(template)
     exp_template = <<-EOS
 {
-  "TestInstanceProfile": {
-    "Description": "description of TestInstanceProfile",
-    "Value": {
-      "Ref": "TestInstanceProfile"
-    }
-  },
   "TestInstanceProfilePhysicalId": {
     "Description": "description of TestInstanceProfilePhysicalId",
     "Value": {

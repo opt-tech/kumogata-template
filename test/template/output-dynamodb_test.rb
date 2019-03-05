@@ -8,12 +8,6 @@ _output_dynamodb "test"
     act_template = run_client_as_json(template)
     exp_template = <<-EOS
 {
-  "TestTable": {
-    "Description": "description of TestTable",
-    "Value": {
-      "Ref": "TestTable"
-    }
-  },
   "TestTablePhysicalId": {
     "Description": "description of TestTablePhysicalId",
     "Value": {

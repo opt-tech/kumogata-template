@@ -8,12 +8,6 @@ _output_network_interface "test"
     act_template = run_client_as_json(template)
     exp_template = <<-EOS
 {
-  "TestNetworkInterface": {
-    "Description": "description of TestNetworkInterface",
-    "Value": {
-      "Ref": "TestNetworkInterface"
-    }
-  },
   "TestNetworkInterfacePhysicalId": {
     "Description": "description of TestNetworkInterfacePhysicalId",
     "Value": {

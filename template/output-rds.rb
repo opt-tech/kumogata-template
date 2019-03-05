@@ -3,9 +3,6 @@
 #
 require 'kumogata/template/helper'
 
-_output "#{args[:name]} db instance",
-        ref_value: "#{args[:name]} db instance",
-        export: _export_string(args, "db instance")
 _output "#{args[:name]} db instance physical id",
         ref_value: "#{args[:name]} db instance",
         export: _export_string(args, "db instance")

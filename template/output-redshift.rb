@@ -3,9 +3,6 @@
 #
 require 'kumogata/template/helper'
 
-_output "#{args[:name]} redshift cluster",
-        ref_value: "#{args[:name]} redshift cluster",
-        export: _export_string(args, "redshift cluster")
 _output "#{args[:name]} redshift cluster physical id",
         ref_value: "#{args[:name]} redshift cluster",
         export: _export_string(args, "redshift cluster")

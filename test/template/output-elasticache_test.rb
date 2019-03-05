@@ -42,12 +42,6 @@ _output_elasticache "test", replication: true, engine: "redis"
     act_template = run_client_as_json(template)
     exp_template = <<-EOS
 {
-  "TestCacheReplicationGroup": {
-    "Description": "description of TestCacheReplicationGroup",
-    "Value": {
-      "Ref": "TestCacheReplicationGroup"
-    }
-  },
   "TestCacheReplicationGroupPhysicalId": {
     "Description": "description of TestCacheReplicationGroupPhysicalId",
     "Value": {

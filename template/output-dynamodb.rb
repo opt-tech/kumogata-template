@@ -3,9 +3,6 @@
 #
 require 'kumogata/template/helper'
 
-_output "#{args[:name]} table",
-        ref_value: "#{args[:name]} table",
-        export: _export_string(args, "table")
 _output "#{args[:name]} table physical id",
         ref_value: "#{args[:name]} table",
         export: _export_string(args, "table")
