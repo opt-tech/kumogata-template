@@ -8,12 +8,6 @@ _output_emr "test"
     act_template = run_client_as_json(template)
     exp_template = <<-EOS
 {
-  "TestEmrCluster": {
-    "Description": "description of TestEmrCluster",
-    "Value": {
-      "Ref": "TestEmrCluster"
-    }
-  },
   "TestEmrClusterPhysicalId": {
     "Description": "description of TestEmrClusterPhysicalId",
     "Value": {

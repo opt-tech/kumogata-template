@@ -5,9 +5,6 @@ require 'kumogata/template/helper'
 
 vpc = "#{args[:name]} vpc"
 
-_output "#{args[:name]} vpc",
-        ref_value: vpc,
-        export: _export_string(args, "vpc")
 _output "#{args[:name]} vpc physical id",
         ref_value: vpc,
         export: _export_string(args, "vpc")

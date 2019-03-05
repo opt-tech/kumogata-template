@@ -3,9 +3,6 @@
 #
 require 'kumogata/template/helper'
 
-_output "#{args[:name]} load balancer",
-        ref_value: "#{args[:name]} load balancer",
-        export: _export_string(args, "load balancer")
 _output "#{args[:name]} load balancer physical id",
         ref_value: "#{args[:name]} load balancer",
         export: _export_string(args, "load balancer")

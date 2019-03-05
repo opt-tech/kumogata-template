@@ -8,12 +8,6 @@ _output_alb "test"
     act_template = run_client_as_json(template)
     exp_template = <<-EOS
 {
-  "TestLoadBalancer": {
-    "Description": "description of TestLoadBalancer",
-    "Value": {
-      "Ref": "TestLoadBalancer"
-    }
-  },
   "TestLoadBalancerPhysicalId": {
     "Description": "description of TestLoadBalancerPhysicalId",
     "Value": {
@@ -57,12 +51,6 @@ _output_alb "test", security_groups: 1
     act_template = run_client_as_json(template)
     exp_template = <<-EOS
 {
-  "TestLoadBalancer": {
-    "Description": "description of TestLoadBalancer",
-    "Value": {
-      "Ref": "TestLoadBalancer"
-    }
-  },
   "TestLoadBalancerPhysicalId": {
     "Description": "description of TestLoadBalancerPhysicalId",
     "Value": {

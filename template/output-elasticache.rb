@@ -8,9 +8,6 @@ engine = _valid_values(args[:engine], %w( memcached redis ), ELASTICACHE_DEFAULT
 
 if replication
   if engine == "redis"
-    _output "#{args[:name]} cache replication group",
-             ref_value: "#{args[:name]} cache replication group",
-             export: _export_string(args, "cache replication group")
     _output "#{args[:name]} cache replication group physical id",
             ref_value: "#{args[:name]} cache replication group",
             export: _export_string(args, "cache replication group")

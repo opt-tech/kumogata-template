@@ -8,12 +8,6 @@ _output_security_group "test"
     act_template = run_client_as_json(template)
     exp_template = <<-EOS
 {
-  "TestSecurityGroup": {
-    "Description": "description of TestSecurityGroup",
-    "Value": {
-      "Ref": "TestSecurityGroup"
-    }
-  },
   "TestSecurityGroupPhysicalId\": {
     "Description": "description of TestSecurityGroupPhysicalId",
     "Value": {

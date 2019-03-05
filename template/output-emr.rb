@@ -3,9 +3,6 @@
 #
 require 'kumogata/template/helper'
 
-_output "#{args[:name]} emr cluster",
-        ref_value: "#{args[:name]} emr cluster",
-        export: _export_string(args, "erm cluster")
 _output "#{args[:name]} emr cluster physical id",
         ref_value: "#{args[:name]} emr cluster",
         export: _export_string(args, "erm cluster")

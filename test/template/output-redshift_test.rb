@@ -8,12 +8,6 @@ _output_redshift "test"
     act_template = run_client_as_json(template)
     exp_template = <<-EOS
 {
-  "TestRedshiftCluster": {
-    "Description": "description of TestRedshiftCluster",
-    "Value": {
-      "Ref": "TestRedshiftCluster"
-    }
-  },
   "TestRedshiftClusterPhysicalId": {
     "Description": "description of TestRedshiftClusterPhysicalId",
     "Value": {

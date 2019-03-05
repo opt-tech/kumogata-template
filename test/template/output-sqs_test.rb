@@ -8,12 +8,6 @@ _output_sqs "test"
     act_template = run_client_as_json(template)
     exp_template = <<-EOS
 {
-  "TestQueue": {
-    "Description": "description of TestQueue",
-    "Value": {
-      "Ref": "TestQueue"
-    }
-  },
   "TestQueuePhysicalId": {
     "Description": "description of TestQueuePhysicalId",
     "Value": {

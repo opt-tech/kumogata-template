@@ -3,9 +3,6 @@
 #
 require 'kumogata/template/helper'
 
-_output "#{args[:name]} network interface",
-        ref_value: "#{args[:name]} network interface",
-        export: _export_string(args, "network interface")
 _output "#{args[:name]} network interface physical id",
         ref_value: "#{args[:name]} network interface",
         export: _export_string(args, "network interface")

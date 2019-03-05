@@ -8,12 +8,6 @@ _output_autoscaling "test"
     act_template = run_client_as_json(template)
     exp_template = <<-EOS
 {
-  "TestAutoscalingGroup": {
-    "Description": "description of TestAutoscalingGroup",
-    "Value": {
-      "Ref": "TestAutoscalingGroup"
-    }
-  },
   "TestAutoscalingGroupPhysicalId": {
     "Description": "description of TestAutoscalingGroupPhysicalId",
     "Value": {

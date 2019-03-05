@@ -3,9 +3,6 @@
 #
 require 'kumogata/template/helper'
 
-_output "#{args[:name]} autoscaling group",
-        ref_value: "#{args[:name]} autoscaling group",
-        export: _export_string(args, "autoscaling group")
 _output "#{args[:name]} autoscaling group physical id",
         ref_value: "#{args[:name]} autoscaling group",
         export: _export_string(args, "autoscaling group")

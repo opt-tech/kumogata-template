@@ -8,12 +8,6 @@ _output_rds "test"
     act_template = run_client_as_json(template)
     exp_template = <<-EOS
 {
-  "TestDbInstance": {
-    "Description": "description of TestDbInstance",
-    "Value": {
-      "Ref": "TestDbInstance"
-    }
-  },
   "TestDbInstancePhysicalId": {
     "Description": "description of TestDbInstancePhysicalId",
     "Value": {

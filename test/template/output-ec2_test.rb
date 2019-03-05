@@ -8,12 +8,6 @@ _output_ec2 "test"
     act_template = run_client_as_json(template)
     exp_template = <<-EOS
 {
-  "TestInstance": {
-    "Description": "description of TestInstance",
-    "Value": {
-      "Ref": "TestInstance"
-    }
-  },
   "TestInstancePhysicalId": {
     "Description": "description of TestInstancePhysicalId",
     "Value": {
@@ -48,12 +42,6 @@ _output_ec2 "test", public_ip: true
     act_template = run_client_as_json(template)
     exp_template = <<-EOS
 {
-  "TestInstance": {
-    "Description": "description of TestInstance",
-    "Value": {
-      "Ref": "TestInstance"
-    }
-  },
   "TestInstancePhysicalId": {
     "Description": "description of TestInstancePhysicalId",
     "Value": {
