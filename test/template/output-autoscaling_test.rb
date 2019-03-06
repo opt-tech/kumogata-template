@@ -14,8 +14,8 @@ _output_autoscaling "test"
       "Ref": "TestAutoscalingGroup"
     }
   },
-  "TestAutoscalingLaunchConfiguration": {
-    "Description": "description of TestAutoscalingLaunchConfiguration",
+  "TestAutoscalingLaunchConfigurationPhysicalId": {
+    "Description": "description of TestAutoscalingLaunchConfigurationPhysicalId",
     "Value": {
       "Ref": "TestAutoscalingLaunchConfiguration"
     }
