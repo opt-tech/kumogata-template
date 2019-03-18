@@ -288,6 +288,8 @@ def _iam_arn(service, resource)
     resource = [ resource ] if resource.is_a? String
     resource.collect!{|v| "#{arn_prefix}:#{v}" }
     _convert_resource(resource)
+  else
+    _convert_resource(resource)
   end
 end
 
