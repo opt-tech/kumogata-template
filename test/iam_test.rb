@@ -412,6 +412,17 @@ arn _iam_arn("iam", [ { account_id: 1, user: "test1" }, { account_id: 2, user: "
 }
     EOS
     assert_equal exp_template.chomp, act_template
+
+    template = <<-EOS
+arn _iam_arn("dynamodb", [ "arn:aws:dynamodb:region:accountid:table/test" ])
+    EOS
+    act_template = run_client_as_json(template)
+    exp_template = <<-EOS
+{
+  "arn": "arn:aws:dynamodb:region:accountid:table/test"
+}
+  EOS
+    assert_equal exp_template.chomp, act_template
   end
 
   def test_iam_login_profile
