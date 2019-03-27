@@ -27,7 +27,7 @@ Gem::Specification.new do |spec|
   spec.test_files    = spec.files.grep(%r{^(test|spec|features)/})
   spec.require_paths = ['lib']
 
-  spec.add_dependency 'aws-sdk', '~> 2.3'
+  spec.add_dependency 'aws-sdk', '~> 3'
   spec.add_dependency 'kumogata2-plugin-ruby', '>= 0.1.6'
   spec.add_development_dependency 'bundler'
   spec.add_development_dependency 'rake'
